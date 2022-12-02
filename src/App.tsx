@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
+import {Registration} from './components/Registration'
+import {StressTest} from './components/StressTest'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+	const [mode, setMode] = useState(0)
+
+	return (
+		<div className="App">
+			<h1>React Hook Form</h1>
+			<div className="button-group">
+				<button type="button" data-active={mode === 0} onClick={() => setMode(0)}>
+					Normal Mode
+				</button>
+				<button type="button" data-active={mode === 1} onClick={() => setMode(1)}>
+					Stress Mode
+				</button>
+			</div>
+			{!mode && <Registration />}
+			{mode && <StressTest />}
+		</div>
+	)
 }
-
-export default App;

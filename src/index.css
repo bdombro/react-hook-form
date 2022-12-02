@@ -1,13 +1,129 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  background: #0e101c;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(79, 98, 148);
+}
+
+.form {
+  background: #0e101c;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+p {
+  color: white;
+}
+
+p.error {
+  color: #bf1650;
+}
+
+p.error::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not(.stress) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+input.stress {
+  box-sizing: border-box;
+  width: 10%;
+}
+input.stress[data-state="error"]::placeholder {
+  color: #bf1650;
+}
+
+label {
+  line-height: 2;
+  margin-bottom: 13px;
+  color: white;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+label.block {
+  display: block;
+  margin-bottom: 13px;
+}
+
+legend {
+  color: white;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+button {
+  background: #ec5990;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+}
+
+button:hover {
+  background: #bf1650;
+}
+
+button:active,
+button:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+input:disabled,
+button:disabled {
+  opacity: 0.4;
+}
+
+button:hover {
+  transition: 0.3s all;
+}
+
+button[data-active="false"] {
+  background-color: gray;
+}
+
+.App {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+div.field-group {
+  margin-bottom: 2rem;
+}
+
+div.button-group {
+  display: flex;
+  margin-bottom: 2rem;
+}
+div.button-group > button {
+  flex: 1;
 }
